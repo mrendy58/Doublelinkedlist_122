@@ -23,8 +23,11 @@ public:
     void revtraverse();
     void hapus();
     void searchData();
-
 };
+
+DoubleLinkedList::addNode() {
+    START = NULL;
+}
 
 int main()
 {
