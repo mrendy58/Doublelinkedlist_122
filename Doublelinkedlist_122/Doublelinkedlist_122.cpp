@@ -18,9 +18,14 @@ public:
     void addNode();
     bool search(int rollNo, Node** previous, Node** current);
     bool deleteNode(int rollNo);
+    bool listEmpety();
     void traverse();
+    void revtraverse();
+    void hapus();
+    void searchData();
 
 };
+
 int main()
 {
     std::cout << "Hello World!\n";
