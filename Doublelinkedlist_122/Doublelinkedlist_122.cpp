@@ -25,7 +25,7 @@ public:
     void searchData();
 };
 
-DoubleLinkedList::addNode() {
+DoubleLinkedList::DoubleLinkedList() {
     START = NULL;
 }
 
@@ -67,6 +67,8 @@ void DoubleLinkedList::addNode() {
         cout << "\nDuplicate roll numbers not allowed" << endl;
         return;
     }
+
+    newNode->next = current->next; // step 4
 
 
 
