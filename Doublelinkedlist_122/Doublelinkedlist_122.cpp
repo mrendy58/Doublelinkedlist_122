@@ -105,9 +105,69 @@ bool DoubleLinkedList::listEmpety() {
     return (START == NULL);
 }
 
+void DoubleLinkedList::traverse() {
+    if (listEmpety())
+        cout << "\nList is empety " << endl;
+    else {
+        cout << "\nRecords in ascending order of roll number are: " << endl;
+        Node* currentNode = START;
+        while (currentNode != NULL) {
+            cout << currentNode->noMhs << " " << currentNode->name << endl;
+            currentNode = currentNode->next;
+        }
+    }
+}
 
+void DoubleLinkedList::revtraverse() {
+    if (listEmpety()) {
+        cout << "\nList is empety" << endl;
+    }
 
+    else {
+        cout << "\nRecords in descending order of roll number are :" << endl;
+        Node* currentNode = START;
+        while (currentNode->next != NULL)
+            currentNode = currentNode->next;
 
+        while (currentNode != NULL) {
+            cout << currentNode->noMhs << " " << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
+}
+
+void DoubleLinkedList::hapus() {
+    if (listEmpety()) {
+        cout << "\nList is empety" << endl;
+
+    }
+    cout << "\nEnter the roll number of student whose record is to be deleted : ";
+    int rollNo;
+    cin >> rollNo;
+    cout << endl;
+    if (DoubleLinkedList::deleteNode(rollNo) == false)
+        cout << "Record not Found" << endl;
+    else
+        cout << "Record with roll number " << rollNo << " deleted " << endl;
+}
+void DoubleLinkedList::searchData() {
+    if (listEmpety()) {
+        cout << "\nList is empety" << endl;
+
+    }
+    Node* prev, * curr;
+    prev = curr = NULL;
+    cout << "\nEnter the roll number of the student whose record you want to search :";
+    int num;
+    cin >> num;
+    if (DoubleLinkedList::search(num, &prev, &curr) == false)
+        cout << "\nRecord not Found" << endl;
+    else {
+        cout << "\nRecord found" << endl;
+        cout << "\nRoll number :" << curr->noMhs << endl;
+        cout << "\nName :" << curr->name << endl;
+    }
+}
 
 int main()
 {
